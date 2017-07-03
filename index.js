@@ -30,7 +30,7 @@ function fontconfig() {
 
 function capture(url, path) {
     return new Promise((resolve, reject) => {
-        exec('LD_LIBRARY_PATH=/tmp/fontconfig/usr/lib/ node webshot.js ' + url + ' ' + path, (error, stdout) => {
+        exec('LD_LIBRARY_PATH=/tmp/fontconfig/usr/lib/ ./phantomjs webshot.js ' + url + ' ' + path, (error, stdout) => {
             if (error) { return reject(error) }
             console.log(stdout)
             resolve()
